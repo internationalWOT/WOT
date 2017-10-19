@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Logik
 {
-    public class Class1
+    public class importRSS
+
     {
+
     }
 }
