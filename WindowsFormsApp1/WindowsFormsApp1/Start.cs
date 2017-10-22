@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApplication8
 {
     public partial class Form1 : Form
     {
@@ -18,19 +17,21 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void chooseButton_Click(object sender, EventArgs e)
+        {
+            PodCasts pc = new PodCasts();
+            pc.Show();
+        }
+
+        private void kategorierButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void feedsButton_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            Feeds f = new Feeds();
+            f.Show();
         }
     }
 }
