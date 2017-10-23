@@ -53,6 +53,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Feeds.resx">
+      <DependentUpon>Feeds.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,6 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Datalager.csproj">
+      <Project>{62AFD7D7-B4FA-4675-B648-54C64EA6DFAB}</Project>
+      <Name>Datalager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logik\Logiklager.csproj">
       <Project>{9cb44294-edee-4a3e-b3cf-33e7009ba1fd}</Project>
       <Name>Logiklager</Name>

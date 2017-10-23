@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ClassLibrary1.Entities;
+using Data;
+using System;
+using System.Collections.Generic;
 
 namespace WindowsFormsApplication8
 {
@@ -68,6 +71,8 @@ namespace WindowsFormsApplication8
             this.laggTillNyKatBtn = new System.Windows.Forms.Button();
             this.taBortKatBtn = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.ListCategories = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // LaggTillUrlLbl
@@ -85,7 +90,6 @@ namespace WindowsFormsApplication8
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(125, 20);
             this.urlTextBox.TabIndex = 1;
-            //urlTextBox.TextChanged += new System.EventHandler(this.urlTextBox_TextChanged);
             // 
             // TaBortUrllbl
             // 
@@ -303,6 +307,7 @@ namespace WindowsFormsApplication8
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 31;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // KategoriLbl
             // 
@@ -336,16 +341,17 @@ namespace WindowsFormsApplication8
             // visaFeedsLbl
             // 
             this.visaFeedsLbl.AutoSize = true;
-            this.visaFeedsLbl.Location = new System.Drawing.Point(438, 320);
+            this.visaFeedsLbl.Location = new System.Drawing.Point(438, 306);
             this.visaFeedsLbl.Name = "visaFeedsLbl";
             this.visaFeedsLbl.Size = new System.Drawing.Size(181, 13);
             this.visaFeedsLbl.TabIndex = 35;
             this.visaFeedsLbl.Text = "Visa alla feeds till en speciell kategori";
+            this.visaFeedsLbl.Click += new System.EventHandler(this.visaFeedsLbl_Click);
             // 
             // seFeedsLbl
             // 
             this.seFeedsLbl.AutoSize = true;
-            this.seFeedsLbl.Location = new System.Drawing.Point(700, 320);
+            this.seFeedsLbl.Location = new System.Drawing.Point(735, 350);
             this.seFeedsLbl.Name = "seFeedsLbl";
             this.seFeedsLbl.Size = new System.Drawing.Size(119, 13);
             this.seFeedsLbl.TabIndex = 36;
@@ -362,7 +368,7 @@ namespace WindowsFormsApplication8
             // feedsCb
             // 
             this.feedsCb.FormattingEnabled = true;
-            this.feedsCb.Location = new System.Drawing.Point(441, 336);
+            this.feedsCb.Location = new System.Drawing.Point(441, 322);
             this.feedsCb.Name = "feedsCb";
             this.feedsCb.Size = new System.Drawing.Size(121, 21);
             this.feedsCb.TabIndex = 38;
@@ -395,16 +401,35 @@ namespace WindowsFormsApplication8
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(699, 336);
+            this.listBox2.Location = new System.Drawing.Point(738, 375);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(120, 95);
             this.listBox2.TabIndex = 42;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(587, 375);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(120, 95);
+            this.listBox3.TabIndex = 43;
+            // 
+            // ListCategories
+            // 
+            this.ListCategories.FormattingEnabled = true;
+            this.ListCategories.Location = new System.Drawing.Point(441, 375);
+            this.ListCategories.Name = "ListCategories";
+            this.ListCategories.Size = new System.Drawing.Size(120, 95);
+            this.ListCategories.TabIndex = 44;
+            this.ListCategories.SelectedIndexChanged += new System.EventHandler(this.ListCategories_SelectedIndexChanged);
             // 
             // Feeds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 482);
+            this.Controls.Add(this.ListCategories);
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.taBortKatBtn);
             this.Controls.Add(this.laggTillNyKatBtn);
@@ -491,6 +516,8 @@ namespace WindowsFormsApplication8
         private System.Windows.Forms.Button laggTillNyKatBtn;
         private System.Windows.Forms.Button taBortKatBtn;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox ListCategories;
 
         public EventHandler urlTextBox_TextChanged { get; private set; }
     }

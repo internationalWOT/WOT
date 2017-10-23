@@ -1,17 +1,20 @@
 ﻿using ClassLibrary1;
+using ClassLibrary1.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.ServiceModel.Syndication;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 namespace Data
 {
-    public class AddNewPod
+    public class XmlHanterare
     {
         public static List<string> newLista = new List<string>();
-        public static List<String> kategoriLista = new List<String>();
+        public static List<string> kategoriLista = new List<String>();
         public List<String> hamtaLista()
         {
             return newLista;
@@ -19,6 +22,62 @@ namespace Data
         public List<String> hamtaKategori()
         {
             return kategoriLista;
+        }
+
+        public void AddNew(string namn, string url, string category, string interval)
+        {
+            using(var client = new WebClient())
+            {
+                client.DownloadFile(url, Directory.GetCurrentDirectory() + @"\" + category + @"\" + namn + ".xml");
+                client.Dispose();
+            }
+        }
+
+        public List<Category> GetAllCategories()
+        {
+            var path = Directory.GetCurrentDirectory();
+            var folders = Directory.GetDirectories(path);
+            List<Category> categories = new List<Category>();
+            foreach(var folder in folders)
+            {
+                var info = new DirectoryInfo(folder);
+                categories.Add(new Category() { Title = info.Name, Path = folder, Podcasts = GetAllPodcastsInCategory(folder) });
+            }
+            return categories;
+        }
+
+        public List<Podcast> GetAllPodcastsInCategory(string categoryPath)
+        {
+            var files = Directory.GetFiles(categoryPath);
+            List<Podcast> podcasts = new List<Podcast>();
+            foreach(var file in files)
+            {
+                var info = new FileInfo(file);
+                podcasts.Add(new Podcast() { Title = info.Name, Path = file, Episodes = GetAllEpisodesInPodcast(file) });
+            }
+            return podcasts;
+        }
+
+        public List<Episode> GetAllEpisodesInPodcast(string podcastPath)
+        {
+            var reader = XmlReader.Create(podcastPath);
+            var feed = SyndicationFeed.Load(reader);
+            var episodes = new List<Episode>();
+
+            foreach (var item in feed.Items)
+            {
+                var episode = new Episode();
+                episode.Title = item.Title.Text;
+                foreach(var link in item.Links) //Hämta ut sökvägen till mp3-filen
+                {
+                    if(link.Uri.OriginalString.EndsWith(".mp3")) //kolla om länken är till en mp3-fil
+                    {
+                        episode.Url = link.Uri.OriginalString;
+                    }
+                    episodes.Add(episode);
+                }
+            }
+            return episodes;
         }
         public void laggTillNy(string namn, string url, string category, string interval)
         {
