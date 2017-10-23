@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logik;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,19 +14,25 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        private ImportRSS _rssReader;
         public Form1()
         {
             InitializeComponent();
+            _rssReader = new ImportRSS();
+            Read();
         }
-
+        private void Read()
+        {
+            _rssReader.Read();
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+           
         }
     }
 }
