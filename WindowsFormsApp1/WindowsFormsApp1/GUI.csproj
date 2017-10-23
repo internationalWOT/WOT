@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feeds.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Feeds.designer.cs">
-      <DependentUpon>Feeds.cs</DependentUpon>
-    </Compile>
     <Compile Include="Kategorier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,9 +65,6 @@
     <Compile Include="Start.designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Feeds.resx">
-      <DependentUpon>Feeds.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Kategorier.resx">
       <DependentUpon>Kategorier.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Datalager.csproj">
+      <Project>{62afd7d7-b4fa-4675-b648-54c64ea6dfab}</Project>
+      <Name>Datalager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logik\Logiklager.csproj">
       <Project>{9cb44294-edee-4a3e-b3cf-33e7009ba1fd}</Project>
       <Name>Logiklager</Name>

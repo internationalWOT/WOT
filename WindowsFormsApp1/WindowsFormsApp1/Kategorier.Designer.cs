@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 357);
+            this.ClientSize = new System.Drawing.Size(984, 545);
             this.Controls.Add(this.taBortKatCb);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.seFeedsLbl);
