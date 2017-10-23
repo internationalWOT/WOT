@@ -34,7 +34,6 @@
             this.ValjKategorilbl = new System.Windows.Forms.Label();
             this.kategoriCb = new System.Windows.Forms.ComboBox();
             this.andraUpgifterlbl = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lyssnadePodslbl = new System.Windows.Forms.Label();
             this.sparaBtn = new System.Windows.Forms.Button();
             this.gammalUrlLbl = new System.Windows.Forms.Label();
@@ -48,13 +47,14 @@
             this.nyKatLbl = new System.Windows.Forms.Label();
             this.gammalKatCb = new System.Windows.Forms.ComboBox();
             this.uppdateringLbl = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.uppdatIntervallCb = new System.Windows.Forms.ComboBox();
             this.nyKatCb = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.gammalUppdatCb = new System.Windows.Forms.ComboBox();
+            this.nyUppdateringsintervallCb = new System.Windows.Forms.ComboBox();
             this.TidigUppdateringLbl = new System.Windows.Forms.Label();
             this.nyUppdateringsintLbl = new System.Windows.Forms.Label();
             this.laggTillNyUrlLbl = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // LaggTillUrlLbl
@@ -109,18 +109,10 @@
             this.andraUpgifterlbl.TabIndex = 6;
             this.andraUpgifterlbl.Text = "Ändra uppgifter för en specifik Url";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(465, 316);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 7;
-            // 
             // lyssnadePodslbl
             // 
             this.lyssnadePodslbl.AutoSize = true;
-            this.lyssnadePodslbl.Location = new System.Drawing.Point(462, 286);
+            this.lyssnadePodslbl.Location = new System.Drawing.Point(479, 242);
             this.lyssnadePodslbl.Name = "lyssnadePodslbl";
             this.lyssnadePodslbl.Size = new System.Drawing.Size(113, 13);
             this.lyssnadePodslbl.TabIndex = 9;
@@ -229,13 +221,13 @@
             this.uppdateringLbl.TabIndex = 23;
             this.uppdateringLbl.Text = "Uppdateringsintervall";
             // 
-            // comboBox3
+            // uppdatIntervallCb
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(329, 52);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 24;
+            this.uppdatIntervallCb.FormattingEnabled = true;
+            this.uppdatIntervallCb.Location = new System.Drawing.Point(329, 52);
+            this.uppdatIntervallCb.Name = "uppdatIntervallCb";
+            this.uppdatIntervallCb.Size = new System.Drawing.Size(121, 21);
+            this.uppdatIntervallCb.TabIndex = 24;
             // 
             // nyKatCb
             // 
@@ -245,21 +237,21 @@
             this.nyKatCb.Size = new System.Drawing.Size(121, 21);
             this.nyKatCb.TabIndex = 25;
             // 
-            // comboBox2
+            // gammalUppdatCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(29, 258);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 26;
+            this.gammalUppdatCb.FormattingEnabled = true;
+            this.gammalUppdatCb.Location = new System.Drawing.Point(29, 258);
+            this.gammalUppdatCb.Name = "gammalUppdatCb";
+            this.gammalUppdatCb.Size = new System.Drawing.Size(121, 21);
+            this.gammalUppdatCb.TabIndex = 26;
             // 
-            // comboBox4
+            // nyUppdateringsintervallCb
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(177, 258);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 27;
+            this.nyUppdateringsintervallCb.FormattingEnabled = true;
+            this.nyUppdateringsintervallCb.Location = new System.Drawing.Point(177, 258);
+            this.nyUppdateringsintervallCb.Name = "nyUppdateringsintervallCb";
+            this.nyUppdateringsintervallCb.Size = new System.Drawing.Size(121, 21);
+            this.nyUppdateringsintervallCb.TabIndex = 27;
             // 
             // TidigUppdateringLbl
             // 
@@ -289,18 +281,27 @@
             this.laggTillNyUrlLbl.TabIndex = 30;
             this.laggTillNyUrlLbl.Text = "Lägg till en ny Url";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(482, 258);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 31;
+            // 
             // Feeds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 482);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.laggTillNyUrlLbl);
             this.Controls.Add(this.nyUppdateringsintLbl);
             this.Controls.Add(this.TidigUppdateringLbl);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.nyUppdateringsintervallCb);
+            this.Controls.Add(this.gammalUppdatCb);
             this.Controls.Add(this.nyKatCb);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.uppdatIntervallCb);
             this.Controls.Add(this.uppdateringLbl);
             this.Controls.Add(this.gammalKatCb);
             this.Controls.Add(this.nyKatLbl);
@@ -314,7 +315,6 @@
             this.Controls.Add(this.gammalUrlLbl);
             this.Controls.Add(this.sparaBtn);
             this.Controls.Add(this.lyssnadePodslbl);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.andraUpgifterlbl);
             this.Controls.Add(this.kategoriCb);
             this.Controls.Add(this.ValjKategorilbl);
@@ -337,7 +337,6 @@
         private System.Windows.Forms.Label ValjKategorilbl;
         private System.Windows.Forms.ComboBox kategoriCb;
         private System.Windows.Forms.Label andraUpgifterlbl;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lyssnadePodslbl;
         private System.Windows.Forms.Button sparaBtn;
         private System.Windows.Forms.Label gammalUrlLbl;
@@ -351,12 +350,13 @@
         private System.Windows.Forms.Label nyKatLbl;
         private System.Windows.Forms.ComboBox gammalKatCb;
         private System.Windows.Forms.Label uppdateringLbl;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox uppdatIntervallCb;
         private System.Windows.Forms.ComboBox nyKatCb;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox gammalUppdatCb;
+        private System.Windows.Forms.ComboBox nyUppdateringsintervallCb;
         private System.Windows.Forms.Label TidigUppdateringLbl;
         private System.Windows.Forms.Label nyUppdateringsintLbl;
         private System.Windows.Forms.Label laggTillNyUrlLbl;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
