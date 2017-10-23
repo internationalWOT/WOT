@@ -21,5 +21,15 @@ namespace WindowsFormsApplication8
         {
 
         }
+
+        private void sparaBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void KategoriLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
