@@ -72,6 +72,7 @@
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(125, 20);
             this.urlTextBox.TabIndex = 1;
+            this.urlTextBox.TextChanged += new System.EventHandler(this.urlTextBox_TextChanged);
             // 
             // TaBortUrllbl
             // 
@@ -98,6 +99,7 @@
             this.kategoriCb.Name = "kategoriCb";
             this.kategoriCb.Size = new System.Drawing.Size(121, 21);
             this.kategoriCb.TabIndex = 5;
+            this.kategoriCb.SelectedIndexChanged += new System.EventHandler(this.kategoriCb_SelectedIndexChanged);
             // 
             // andraUpgifterlbl
             // 

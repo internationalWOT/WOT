@@ -21,5 +21,15 @@ namespace WindowsFormsApplication8
         {
 
         }
+
+        private void kategoriCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void urlTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
