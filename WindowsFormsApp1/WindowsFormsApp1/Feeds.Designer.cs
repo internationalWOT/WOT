@@ -71,7 +71,7 @@ namespace WindowsFormsApplication8
             this.laggTillNyKatBtn = new System.Windows.Forms.Button();
             this.taBortKatBtn = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.ListPodcasts = new System.Windows.Forms.ListBox();
             this.ListCategories = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -406,13 +406,13 @@ namespace WindowsFormsApplication8
             this.listBox2.Size = new System.Drawing.Size(120, 95);
             this.listBox2.TabIndex = 42;
             // 
-            // listBox3
+            // ListPodcasts
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(587, 375);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 95);
-            this.listBox3.TabIndex = 43;
+            this.ListPodcasts.FormattingEnabled = true;
+            this.ListPodcasts.Location = new System.Drawing.Point(587, 375);
+            this.ListPodcasts.Name = "ListPodcasts";
+            this.ListPodcasts.Size = new System.Drawing.Size(120, 95);
+            this.ListPodcasts.TabIndex = 43;
             // 
             // ListCategories
             // 
@@ -429,7 +429,7 @@ namespace WindowsFormsApplication8
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 482);
             this.Controls.Add(this.ListCategories);
-            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.ListPodcasts);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.taBortKatBtn);
             this.Controls.Add(this.laggTillNyKatBtn);
@@ -516,7 +516,7 @@ namespace WindowsFormsApplication8
         private System.Windows.Forms.Button laggTillNyKatBtn;
         private System.Windows.Forms.Button taBortKatBtn;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox ListPodcasts;
         private System.Windows.Forms.ListBox ListCategories;
 
         public EventHandler urlTextBox_TextChanged { get; private set; }

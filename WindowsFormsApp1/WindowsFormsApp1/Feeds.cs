@@ -27,11 +27,9 @@ namespace WindowsFormsApplication8
 
         private void fillCategorylist()
         {
-            foreach (var category in _categories)
-               
+            foreach (var category in _categories)         
             {
                 ListCategories.Items.Add(category);
-
             }
         }
 
@@ -42,7 +40,8 @@ namespace WindowsFormsApplication8
 
         private void sparaBtn_Click(object sender, EventArgs e)
         {
-            
+            xmlHanterare.AddNew("alex o sigge", "http://alexosigge.libsyn.com/rss", "Humor", "");
+            _categories = xmlHanterare.GetAllCategories();
         }
 
         private void KategoriLbl_Click(object sender, EventArgs e)
@@ -64,7 +63,11 @@ namespace WindowsFormsApplication8
 
         private void ListCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var item = (Category)ListCategories.SelectedItem;
+            foreach(var podcast in item.Podcasts)
+            {
+                ListPodcasts.Items.Add(podcast);
+            }
         }
     }
 }
