@@ -87,7 +87,7 @@ namespace WindowsFormsApplication8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 248);
+            this.ClientSize = new System.Drawing.Size(967, 518);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.chooseButton);
