@@ -77,9 +77,6 @@
     <EmbeddedResource Include="Kategorier.resx">
       <DependentUpon>Kategorier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PodCasts.resx">
-      <DependentUpon>PodCasts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
