@@ -17,6 +17,8 @@ namespace WindowsFormsApplication8
         private List<Category> _categories;
         private XmlHanterare xmlHanterare;
 
+        public object GetallCategories { get; private set; }
+
         public Feeds()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace WindowsFormsApplication8
 
         private void sparaBtn_Click(object sender, EventArgs e)
         {
-            xmlHanterare.AddNew("alex o sigge", "http://alexosigge.libsyn.com/rss", "Humor", "");
+            xmlHanterare.AddNew("alex o sigge", "https://cdn.radioplay.se/data/rss/304.xml", "Humor", "");
             _categories = xmlHanterare.GetAllCategories();
         }
 
@@ -68,6 +70,25 @@ namespace WindowsFormsApplication8
             {
                 ListPodcasts.Items.Add(podcast);
             }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ListPodcasts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var item = (Podcast)ListPodcasts.SelectedItem;
+            foreach (var episode in item.Episodes)
+            {
+                ListEpisodes.Items.Add(episode);
+            }
+        }
+
+        private void urlTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

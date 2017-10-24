@@ -25,7 +25,11 @@ namespace ClassLibrary1
             //Skapa en objektrepresentation.
             var dom = new System.Xml.XmlDocument();
             dom.LoadXml(xml);
+
+            
         }
+
+
 
         internal XmlDocument fetchDocument(string url)
         {

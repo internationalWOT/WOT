@@ -70,7 +70,7 @@ namespace WindowsFormsApplication8
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.laggTillNyKatBtn = new System.Windows.Forms.Button();
             this.taBortKatBtn = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.ListEpisodes = new System.Windows.Forms.ListBox();
             this.ListPodcasts = new System.Windows.Forms.ListBox();
             this.ListCategories = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -90,6 +90,7 @@ namespace WindowsFormsApplication8
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(125, 20);
             this.urlTextBox.TabIndex = 1;
+            this.urlTextBox.TextChanged += new System.EventHandler(this.urlTextBox_TextChanged);
             // 
             // TaBortUrllbl
             // 
@@ -398,13 +399,14 @@ namespace WindowsFormsApplication8
             this.taBortKatBtn.Text = "Ta bort";
             this.taBortKatBtn.UseVisualStyleBackColor = true;
             // 
-            // listBox2
+            // ListEpisodes
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(738, 375);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 42;
+            this.ListEpisodes.FormattingEnabled = true;
+            this.ListEpisodes.Location = new System.Drawing.Point(738, 375);
+            this.ListEpisodes.Name = "ListEpisodes";
+            this.ListEpisodes.Size = new System.Drawing.Size(120, 95);
+            this.ListEpisodes.TabIndex = 42;
+            this.ListEpisodes.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // ListPodcasts
             // 
@@ -413,6 +415,7 @@ namespace WindowsFormsApplication8
             this.ListPodcasts.Name = "ListPodcasts";
             this.ListPodcasts.Size = new System.Drawing.Size(120, 95);
             this.ListPodcasts.TabIndex = 43;
+            this.ListPodcasts.SelectedIndexChanged += new System.EventHandler(this.ListPodcasts_SelectedIndexChanged);
             // 
             // ListCategories
             // 
@@ -430,7 +433,7 @@ namespace WindowsFormsApplication8
             this.ClientSize = new System.Drawing.Size(912, 482);
             this.Controls.Add(this.ListCategories);
             this.Controls.Add(this.ListPodcasts);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.ListEpisodes);
             this.Controls.Add(this.taBortKatBtn);
             this.Controls.Add(this.laggTillNyKatBtn);
             this.Controls.Add(this.textBox1);
@@ -515,10 +518,10 @@ namespace WindowsFormsApplication8
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button laggTillNyKatBtn;
         private System.Windows.Forms.Button taBortKatBtn;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox ListEpisodes;
         private System.Windows.Forms.ListBox ListPodcasts;
         private System.Windows.Forms.ListBox ListCategories;
 
-        public EventHandler urlTextBox_TextChanged { get; private set; }
+        //public EventHandler urlTextBox_TextChanged { get; private set; }
     }
 }

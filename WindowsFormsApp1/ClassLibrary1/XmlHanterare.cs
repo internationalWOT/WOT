@@ -8,6 +8,7 @@ using System.Net;
 using System.ServiceModel.Syndication;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 namespace Data
 {
@@ -79,6 +80,10 @@ namespace Data
             }
             return episodes;
         }
+
+
+
+
         public void laggTillNy(string namn, string url, string category, string interval)
         {
             Rss method = new Rss();

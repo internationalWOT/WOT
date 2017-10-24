@@ -13,6 +13,7 @@ namespace ClassLibrary1.Entities
         public string Path { get; set; }
 
         public List<Episode> Episodes { get; set; }
+        
         public override string ToString()
         {
             return Title;
